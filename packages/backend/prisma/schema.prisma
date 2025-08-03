@@ -1,0 +1,125 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model FaucetRequest {
+  id            String   @id @default(cuid())
+  walletAddress String
+  ipAddress     String
+  amount        BigInt   // Amount in MIST (1 SUI = 10^9 MIST)
+  status        String   @default("pending") // pending, success, failed, expired
+  txHash        String?
+  failureReason String?
+  userAgent     String?
+  country       String?
+  region        String?
+  city          String?
+  timezone      String?
+  browser       String?
+  os            String?
+  device        String?
+  isBot         Boolean  @default(false)
+  responseTime  Int?     // Response time in milliseconds
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([walletAddress])
+  @@index([ipAddress])
+  @@index([status])
+  @@index([createdAt])
+  @@index([country])
+}
+
+model AdminUser {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  password    String
+  role        String   @default("moderator") // admin, moderator
+  permissions String[] @default([])
+  isActive    Boolean  @default(true)
+  lastLogin   DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([email])
+  @@index([role])
+}
+
+model BlacklistedEntity {
+  id        String    @id @default(cuid())
+  target    String    // IP address or wallet address
+  type      String    // ip, wallet
+  reason    String
+  expiresAt DateTime?
+  createdBy String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([target])
+  @@index([type])
+  @@index([expiresAt])
+}
+
+model FaucetConfig {
+  id                    String   @id @default(cuid())
+  key                   String   @unique
+  value                 String
+  description           String?
+  isPublic              Boolean  @default(false)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([key])
+}
+
+model RateLimit {
+  id        String   @id @default(cuid())
+  key       String   // IP address or wallet address
+  type      String   // ip, wallet
+  count     Int      @default(1)
+  resetAt   DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([key, type])
+  @@index([resetAt])
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  action      String   // create, update, delete, login, etc.
+  entity      String?  // FaucetRequest, AdminUser, etc.
+  entityId    String?
+  userId      String?
+  userEmail   String?
+  ipAddress   String?
+  userAgent   String?
+  details     Json?
+  createdAt   DateTime @default(now())
+
+  @@index([action])
+  @@index([entity])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model DiscordWebhook {
+  id          String   @id @default(cuid())
+  webhookUrl  String   @unique
+  channelName String?
+  isActive    Boolean  @default(true)
+  events      String[] @default([]) // faucet_request, admin_action, etc.
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([isActive])
+  @@index([events])
+} 
