@@ -5,6 +5,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+
 # Runtime data
 pids
 *.pid
@@ -134,20 +135,30 @@ logs
 *.sqlite3
 
 # Build outputs
-build/
 dist/
-*.tgz
+build/
+out/
 
 # Temporary files
 tmp/
 temp/
 
-# Prisma
-packages/backend/prisma/migrations/
+# Test files
+test-results/
+playwright-report/
+test-results.xml
 
-# Discord bot
-packages/discord-bot/dist/
+# Docker
+.dockerignore
+docker-compose.override.yml
 
-# Frontend
-packages/frontend/.next/
-packages/frontend/out/ 
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Kubernetes
+*.kubeconfig
+
+# Local development
+.local/ 
