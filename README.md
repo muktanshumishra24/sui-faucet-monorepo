@@ -1,95 +1,239 @@
----
-# 🔧 SUIss Knife – Sui Testnet Token Faucet
+# 🔪 SUIss Knife – Premium Sui Testnet Faucet
 
-SUIss Knife is a sleek, developer-friendly testnet faucet interface built with **Vite + React** and powered by **Sui's blockchain infrastructure**. Developers or Users can request testnet tokens using their wallet address or directly connect their wallet via Mysten's dapp-kit integration.
----
-### 🚀 Features
+> **A beautifully crafted, modern testnet faucet interface for the Sui blockchain**
 
-- ⚡ Fast and responsive UI (built with **Vite + TailwindCSS**)
-- 🔒 Address format validation
-- 🔗 Wallet connect support via `@mysten/dapp-kit`
-- 🌐 Works with both **manual wallet input** and **connected wallet**
-- 🚫 Rate-limiting with feedback via **React Hot Toast**
-- 🔍 Direct transaction links to [SuiVision](https://suivision.xyz/)
-- 💡 Simple environment-based API configuration
+SUIss Knife is a premium, developer-friendly testnet faucet built with **Vite + React + TypeScript** and powered by **Sui's blockchain infrastructure**. Features a stunning dark theme with glass morphism effects, smooth animations, and modular architecture.
+
+![SUIss Knife Preview](./screenshot.png)
 
 ---
 
-### 📸 Demo
+## ✨ Features
 
-### [Live App →](https://suiss-knife.vercel.app)
+### 🎨 **Premium UI/UX**
+- **Dark Theme Design** with glass morphism effects
+- **Smooth Animations** and micro-interactions
+- **Responsive Layout** optimized for all devices
+- **Enhanced Visual Feedback** with hover states and transitions
+- **Professional Typography** with proper hierarchy
 
-![preview](./screenshot.png)
+### 🔧 **Technical Excellence**
+- **Modular Architecture** with reusable components
+- **TypeScript** for type safety and better DX
+- **TailwindCSS** for rapid, consistent styling
+- **Custom Animations** with CSS keyframes
+- **Component-Based** structure for maintainability
+
+### 🔐 **Wallet Integration**
+- **Dual Connection Methods**: Manual input or wallet connect
+- **Address Validation** with real-time feedback
+- **Custom Wallet Dropdown** with dark theme styling
+- **Transaction Status** with detailed feedback
+- **Rate Limiting** with user-friendly messages
+
+### 🌐 **Blockchain Features**
+- **Sui Testnet Support** with mainnet readiness
+- **Real-time Transaction Tracking**
+- **Explorer Integration** for transaction verification
+- **Rate Limit Management** with cooldown periods
+- **Error Handling** with graceful fallbacks
 
 ---
 
-### 🧑‍💻 Getting Started
+## 🚀 Live Demo
 
-#### 1. Clone the repo
+### [🌐 Live Application](https://suiss-knife.vercel.app)
 
+Experience the premium faucet interface with all enhanced features!
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm, yarn, or pnpm
+- Git
+
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/dennispaul8/suifaucet-template.git
-cd suifaucet-template
+git clone https://github.com/muktanshumishra24/sui-faucet-monorepo.git
+cd sui-faucet-monorepo
 ```
 
-#### 2. Install dependencies
-
+### 2. Install Dependencies
 ```bash
 npm install
+# or
+yarn install
+# or
+pnpm install
 ```
 
-> Or use `pnpm install` / `yarn install` depending on your setup.
-
-#### 3. Create `.env` file
-
-Create a `.env` file in the root with the following:
+### 3. Environment Configuration
+Create a `.env` file in the root directory:
 
 ```env
 VITE_API_BASE_URL=https://sui-token-faucet-distribution-production.up.railway.app
 ```
 
-Make sure your backend supports CORS.
-
-#### 4. Run locally
-
+### 4. Start Development Server
 ```bash
-npm run dev or pnpm dev
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-The app will be available at [http://localhost:5173](http://localhost:5173)
+Visit [http://localhost:5173](http://localhost:5173) to see the application.
 
 ---
 
-### ✅ Request Flow
+## 📁 Project Architecture
 
-1. Select chain (currently supports `Sui Testnet`)
-2. Paste your wallet address **or** connect via wallet
-3. Click “Request Tokens”
-4. Receive a success toast with explorer link
-   Example: [View on Suivision](https://suivision.xyz/txblock/0x123...)
-
----
-
-### 📁 Project Structure
-
-```bash
+```
 src/
-├── components/
-│   └── RateLimitModal.tsx
-├── useTokenRequest.ts
-├── App.tsx
-├── main.tsx
-└── networkConfig.ts
+├── components/           # Modular UI Components
+│   ├── Header.tsx       # Navigation & wallet connection
+│   ├── HeroSection.tsx  # Main title & branding
+│   ├── WalletCard.tsx   # Wallet input & request logic
+│   ├── FaucetInfoCard.tsx # Enhanced faucet information
+│   ├── Footer.tsx       # Social links & copyright
+│   ├── BackgroundEffects.tsx # Animated background
+│   └── CustomWalletButton.tsx # Custom wallet dropdown
+├── App.tsx              # Main application component
+├── App.css              # Custom animations & styles
+├── useTokenRequest.ts   # API integration logic
+├── networkConfig.ts     # Network configuration
+└── main.tsx            # Application entry point
 ```
 
 ---
 
-### 🙌 Acknowledgments
+## 🎯 Usage Guide
 
-- [First Movers](https://x.com/firstmovers_) – for creating the bounty
-- [H2O](https://x.com/H2oNodes) – for sponsoring the bounty
-- [Mysten Labs](https://mystenlabs.com/) – for building Sui and dapp-kit
-- [SuiVision](https://suivision.xyz/) – for transaction explorers
-- [Tailwind CSS](https://tailwindcss.com/) – for rapid UI development
+### 1. **Connect Your Wallet**
+   - Click "Connect Wallet" in the header
+   - Or manually enter your wallet address
+
+### 2. **View Faucet Information**
+   - Check chain details, rate limits, and token amounts
+   - Beautiful gradient cards with hover effects
+
+### 3. **Request Tokens**
+   - Click "Request Tokens" button
+   - View real-time transaction status
+   - Get explorer links for verification
+
+### 4. **Monitor Transactions**
+   - Real-time status updates
+   - Error handling with helpful messages
+   - Rate limit feedback
 
 ---
+
+## 🎨 UI Components
+
+### **Header Component**
+- Logo and branding
+- Live status indicator
+- Custom wallet connection dropdown
+
+### **Hero Section**
+- Animated title with fade-in effects
+- Status indicators with pulse animations
+- Responsive layout with proper spacing
+
+### **Wallet Card**
+- Address validation with real-time feedback
+- Transaction status with color-coded messages
+- Enhanced button states with hover effects
+
+### **Faucet Info Card**
+- Gradient background cards
+- Icon animations and hover effects
+- Detailed information with visual hierarchy
+
+### **Background Effects**
+- Animated gradient orbs
+- Staggered animation delays
+- Subtle depth and movement
+
+---
+
+## 🔧 Technical Stack
+
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS + Custom CSS
+- **Wallet Integration**: @mysten/dapp-kit
+- **Animations**: CSS Keyframes + Tailwind
+- **Deployment**: Vercel
+
+---
+
+## 🎨 Design Features
+
+### **Color Scheme**
+- **Primary**: Dark theme with blue accents
+- **Success**: Green gradients for positive states
+- **Warning**: Orange-red for rate limits
+- **Error**: Red for error states
+
+### **Animations**
+- **Fade-in-up**: Page load animations
+- **Scale-in**: Button and card hover effects
+- **Pulse**: Status indicators
+- **Float**: Subtle background movement
+
+### **Typography**
+- **Headings**: Bold, gradient text effects
+- **Body**: Clean, readable fonts
+- **Labels**: Uppercase with tracking
+- **Status**: Color-coded for clarity
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- **Mysten Labs** – For building Sui and dapp-kit
+- **TailwindCSS** – For the amazing utility-first CSS framework
+- **Vercel** – For seamless deployment
+- **React Team** – For the incredible framework
+- **Sui Community** – For the amazing blockchain ecosystem
+
+---
+
+## 📞 Contact
+
+- **Developer**: Muktanshu Mishra
+- **GitHub**: [@muktanshumishra24](https://github.com/muktanshumishra24)
+- **Project**: [SUIss Knife](https://suiss-knife.vercel.app)
+
+---
+
+<div align="center">
+
+**Made with ❤️ for the Sui Community**
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-SUIss%20Knife-blue?style=for-the-badge&logo=vercel)](https://suiss-knife.vercel.app)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+
+</div>

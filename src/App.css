@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  background-color: #000;
+}
+
 /* Custom gradient animations */
 @keyframes gradient-shift {
   0%, 100% {
@@ -40,8 +44,274 @@
   -webkit-backdrop-filter: blur(16px);
 }
 
+/* Glass morphism utilities */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-hover {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-blue {
+  background: rgba(59, 130, 246, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.glass-orange {
+  background: rgba(249, 115, 22, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(249, 115, 22, 0.15);
+}
+
+.glass-green {
+  background: rgba(34, 197, 94, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.glass-red {
+  background: rgba(239, 68, 68, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.glass-purple {
+  background: rgba(147, 51, 234, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(147, 51, 234, 0.15);
+}
+
 /* Smooth transitions */
 * {
   transition: all 0.2s ease-in-out;
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom ConnectButton styling - targeting dapp-kit elements */
+.connect-button-wrapper button,
+.connect-button-wrapper [role="button"],
+.connect-button-wrapper [data-radix-trigger] {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 12px !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(16px) !important;
+  min-height: 40px !important;
+}
+
+.connect-button-wrapper button:hover,
+.connect-button-wrapper [role="button"]:hover,
+.connect-button-wrapper [data-radix-trigger]:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  transform: translateY(-1px) !important;
+}
+
+.connect-button-wrapper button:focus,
+.connect-button-wrapper [role="button"]:focus,
+.connect-button-wrapper [data-radix-trigger]:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5) !important;
+}
+
+/* Dropdown menu styling */
+.connect-button-wrapper [data-radix-popper-content-wrapper] {
+  z-index: 60 !important;
+}
+
+.connect-button-wrapper [data-radix-popper-content-wrapper] [role="menu"],
+.connect-button-wrapper [data-radix-popper-content-wrapper] div[role="menu"],
+.connect-button-wrapper [data-radix-popper-content-wrapper] ul,
+.connect-button-wrapper [data-radix-popper-content-wrapper] .dropdown-menu,
+.connect-button-wrapper [data-radix-popper-content-wrapper] [class*="dropdown"],
+.connect-button-wrapper [data-radix-popper-content-wrapper] [class*="menu"] {
+  background: rgba(17, 24, 39, 0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 8px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  color: white !important;
+}
+
+.connect-button-wrapper [data-radix-popper-content-wrapper] [role="menuitem"],
+.connect-button-wrapper [data-radix-popper-content-wrapper] li,
+.connect-button-wrapper [data-radix-popper-content-wrapper] button,
+.connect-button-wrapper [data-radix-popper-content-wrapper] div[role="button"],
+.connect-button-wrapper [data-radix-popper-content-wrapper] [class*="menu-item"],
+.connect-button-wrapper [data-radix-popper-content-wrapper] [class*="dropdown-item"] {
+  color: white !important;
+  background: transparent !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  margin: 2px 0 !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.connect-button-wrapper [data-radix-popper-content-wrapper] [role="menuitem"]:hover,
+.connect-button-wrapper [data-radix-popper-content-wrapper] li:hover,
+.connect-button-wrapper [data-radix-popper-content-wrapper] button:hover,
+.connect-button-wrapper [data-radix-popper-content-wrapper] div[role="button"]:hover,
+.connect-button-wrapper [data-radix-popper-content-wrapper] [class*="menu-item"]:hover,
+.connect-button-wrapper [data-radix-popper-content-wrapper] [class*="dropdown-item"]:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #60a5fa !important;
+}
+
+.connect-button-wrapper [data-radix-popper-content-wrapper] [role="menuitem"][data-disabled],
+.connect-button-wrapper [data-radix-popper-content-wrapper] li[data-disabled],
+.connect-button-wrapper [data-radix-popper-content-wrapper] button[data-disabled],
+.connect-button-wrapper [data-radix-popper-content-wrapper] div[data-disabled] {
+  color: #6b7280 !important;
+  cursor: not-allowed !important;
+}
+
+/* Override any white backgrounds in dropdowns */
+.connect-button-wrapper [data-radix-popper-content-wrapper] * {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.connect-button-wrapper [data-radix-popper-content-wrapper] *[style*="background"] {
+  background-color: rgba(17, 24, 39, 0.95) !important;
+}
+
+.connect-button-wrapper [data-radix-popper-content-wrapper] *[style*="color"] {
+  color: white !important;
+}
+
+/* Override any default dapp-kit styles */
+.connect-button-wrapper * {
+  font-family: inherit !important;
+}
+
+/* More aggressive targeting for dapp-kit ConnectButton */
+.connect-button-wrapper button,
+.connect-button-wrapper [role="button"],
+.connect-button-wrapper [data-radix-trigger],
+.connect-button-wrapper [data-radix-trigger] button {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 12px !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(16px) !important;
+  min-height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+/* Force override any inline styles */
+.connect-button-wrapper button[style],
+.connect-button-wrapper [role="button"][style],
+.connect-button-wrapper [data-radix-trigger][style] {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+/* Select dropdown styling */
+select option {
+  background: #1f2937 !important;
+  color: white !important;
+  padding: 8px 12px !important;
+}
+
+select option:hover {
+  background: #374151 !important;
+}
+
+select option:checked {
+  background: #3b82f6 !important;
+  color: white !important;
 }
 
