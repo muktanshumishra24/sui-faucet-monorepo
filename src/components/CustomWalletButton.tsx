@@ -12,7 +12,17 @@ const CustomWalletButton: React.FC = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (buttonRef.current && !buttonRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      const dropdownElement = document.querySelector('[data-dropdown="wallet-dropdown"]');
+      
+      console.log('Click outside handler - target:', target);
+      console.log('Dropdown element:', dropdownElement);
+      
+      if (buttonRef.current && 
+          !buttonRef.current.contains(target) && 
+          dropdownElement && 
+          !dropdownElement.contains(target)) {
+        console.log('Closing dropdown due to click outside');
         setIsOpen(false);
       }
     };
@@ -33,8 +43,13 @@ const CustomWalletButton: React.FC = () => {
   };
 
   const handleDisconnect = () => {
-    disconnect();
-    setIsOpen(false);
+    console.log('Disconnect button clicked');
+    try {
+      disconnect();
+      setIsOpen(false);
+    } catch (error) {
+      console.error('Error disconnecting wallet:', error);
+    }
   };
 
   const formatAddress = (address: string) => {
@@ -71,6 +86,7 @@ const CustomWalletButton: React.FC = () => {
 
       {isOpen && createPortal(
         <div 
+          data-dropdown="wallet-dropdown"
           className="fixed glass-card rounded-xl shadow-2xl z-[9999] min-w-[200px]"
           style={{
             top: dropdownPosition.top,
@@ -86,8 +102,18 @@ const CustomWalletButton: React.FC = () => {
             </button>
             <div className="h-px bg-white/10 my-1"></div>
             <button
-              onClick={handleDisconnect}
-              className="w-full text-left px-3 py-2 text-sm text-red-400 hover:text-red-300 glass-red rounded-lg transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Disconnect button clicked - event handler');
+                handleDisconnect();
+              }}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Disconnect button mousedown');
+              }}
+              className="w-full text-left px-3 py-2 text-sm text-red-400 hover:text-red-300 glass-red rounded-lg transition-colors cursor-pointer"
             >
               Disconnect
             </button>

@@ -7,7 +7,7 @@ import {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="glass-card border-t border-white/10 mt-auto">
+    <footer className="glass-card-footer mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           <div className="flex items-center space-x-4 text-sm text-gray-300">

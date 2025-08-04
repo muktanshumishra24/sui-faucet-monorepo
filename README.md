@@ -4,13 +4,12 @@
 
 SUIss Knife is a premium, developer-friendly testnet faucet built with **Vite + React + TypeScript** and powered by **Sui's blockchain infrastructure**. Features a stunning dark theme with glass morphism effects, smooth animations, and modular architecture.
 
-![SUIss Knife Preview](./screenshot.png)
-
 ---
 
 ## ✨ Features
 
 ### 🎨 **Premium UI/UX**
+
 - **Dark Theme Design** with glass morphism effects
 - **Smooth Animations** and micro-interactions
 - **Responsive Layout** optimized for all devices
@@ -18,6 +17,7 @@ SUIss Knife is a premium, developer-friendly testnet faucet built with **Vite + 
 - **Professional Typography** with proper hierarchy
 
 ### 🔧 **Technical Excellence**
+
 - **Modular Architecture** with reusable components
 - **TypeScript** for type safety and better DX
 - **TailwindCSS** for rapid, consistent styling
@@ -25,6 +25,7 @@ SUIss Knife is a premium, developer-friendly testnet faucet built with **Vite + 
 - **Component-Based** structure for maintainability
 
 ### 🔐 **Wallet Integration**
+
 - **Dual Connection Methods**: Manual input or wallet connect
 - **Address Validation** with real-time feedback
 - **Custom Wallet Dropdown** with dark theme styling
@@ -32,6 +33,7 @@ SUIss Knife is a premium, developer-friendly testnet faucet built with **Vite + 
 - **Rate Limiting** with user-friendly messages
 
 ### 🌐 **Blockchain Features**
+
 - **Sui Testnet Support** with mainnet readiness
 - **Real-time Transaction Tracking**
 - **Explorer Integration** for transaction verification
@@ -51,17 +53,20 @@ Experience the premium faucet interface with all enhanced features!
 ## 🛠️ Getting Started
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - npm, yarn, or pnpm
 - Git
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/muktanshumishra24/sui-faucet-monorepo.git
 cd sui-faucet-monorepo
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 npm install
 # or
@@ -70,14 +75,8 @@ yarn install
 pnpm install
 ```
 
-### 3. Environment Configuration
-Create a `.env` file in the root directory:
+### 3. Start Development Server
 
-```env
-VITE_API_BASE_URL=https://sui-token-faucet-distribution-production.up.railway.app
-```
-
-### 4. Start Development Server
 ```bash
 npm run dev
 # or
@@ -114,48 +113,57 @@ src/
 ## 🎯 Usage Guide
 
 ### 1. **Connect Your Wallet**
-   - Click "Connect Wallet" in the header
-   - Or manually enter your wallet address
+
+- Click "Connect Wallet" in the header
+- Or manually enter your wallet address
 
 ### 2. **View Faucet Information**
-   - Check chain details, rate limits, and token amounts
-   - Beautiful gradient cards with hover effects
+
+- Check chain details, rate limits, and token amounts
+- Beautiful gradient cards with hover effects
 
 ### 3. **Request Tokens**
-   - Click "Request Tokens" button
-   - View real-time transaction status
-   - Get explorer links for verification
+
+- Click "Request Tokens" button
+- View real-time transaction status
+- Get explorer links for verification
 
 ### 4. **Monitor Transactions**
-   - Real-time status updates
-   - Error handling with helpful messages
-   - Rate limit feedback
+
+- Real-time status updates
+- Error handling with helpful messages
+- Rate limit feedback
 
 ---
 
 ## 🎨 UI Components
 
 ### **Header Component**
+
 - Logo and branding
 - Live status indicator
 - Custom wallet connection dropdown
 
 ### **Hero Section**
+
 - Animated title with fade-in effects
 - Status indicators with pulse animations
 - Responsive layout with proper spacing
 
 ### **Wallet Card**
+
 - Address validation with real-time feedback
 - Transaction status with color-coded messages
 - Enhanced button states with hover effects
 
 ### **Faucet Info Card**
+
 - Gradient background cards
 - Icon animations and hover effects
 - Detailed information with visual hierarchy
 
 ### **Background Effects**
+
 - Animated gradient orbs
 - Staggered animation delays
 - Subtle depth and movement
@@ -176,18 +184,21 @@ src/
 ## 🎨 Design Features
 
 ### **Color Scheme**
+
 - **Primary**: Dark theme with blue accents
 - **Success**: Green gradients for positive states
 - **Warning**: Orange-red for rate limits
 - **Error**: Red for error states
 
 ### **Animations**
+
 - **Fade-in-up**: Page load animations
 - **Scale-in**: Button and card hover effects
 - **Pulse**: Status indicators
 - **Float**: Subtle background movement
 
 ### **Typography**
+
 - **Headings**: Bold, gradient text effects
 - **Body**: Clean, readable fonts
 - **Labels**: Uppercase with tracking

@@ -49,7 +49,7 @@ const WalletCard: React.FC<WalletCardProps> = ({
             type="text"
             value={wallet}
             onChange={onWalletChange}
-            placeholder="Connect your wallet to request tokens"
+            placeholder="Your Wallet Address"
             className="w-full p-3 rounded-xl glass-card text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
           />
         )}
@@ -62,7 +62,7 @@ const WalletCard: React.FC<WalletCardProps> = ({
         {!currentAccount?.address && (
           <p className="text-blue-400 text-xs mt-2 flex items-center gap-1">
             <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
-            Connect your wallet using the button in the header
+            Connect your wallet to request tokens.
           </p>
         )}
       </div>
@@ -141,7 +141,7 @@ const WalletCard: React.FC<WalletCardProps> = ({
       <button
         onClick={onRequest}
         disabled={!currentAccount?.address || loading}
-        className={`w-full py-4 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-300 ${
+        className={`w-full py-3 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-300 ${
           !currentAccount?.address || loading
             ? "bg-gray-600/50 cursor-not-allowed text-gray-400"
             : "bg-blue-600 hover:bg-blue-700 text-white cursor-pointer transform hover:scale-105 hover:shadow-xl shadow-lg"
@@ -155,7 +155,6 @@ const WalletCard: React.FC<WalletCardProps> = ({
         ) : !currentAccount?.address ? (
           <>
             Connect Wallet to Request
-            <ArrowRightIcon size={16} />
           </>
         ) : (
           <>
