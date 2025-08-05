@@ -69,7 +69,7 @@ const CustomWalletButton: React.FC = () => {
       <button
         ref={buttonRef}
         onClick={handleButtonClick}
-        className="glass-card rounded-xl px-4 py-2 text-white hover:glass-card-hover transition-all duration-200 flex items-center gap-2"
+        className="glass-card rounded-lg px-4 py-2 text-white hover:glass-card-hover transition-all duration-200 flex items-center gap-2"
       >
         <span className="text-sm font-normal">
           {formatAddress(currentAccount.address)}
